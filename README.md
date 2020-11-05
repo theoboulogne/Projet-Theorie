@@ -1,6 +1,6 @@
 # Projet-THL
 
-##code
+## code
 -
 -
 -
@@ -15,14 +15,14 @@
 -
 -
 
-##affichage
+## affichage
 -
 -
 -
 -
 -
 
-##tasks
+## tasks
 -
 -
 -
