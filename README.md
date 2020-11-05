@@ -30,6 +30,9 @@
                 - une table
                 - un objet déplacable
                 - un objet transportable
+-
+
+
 
 ## affichage
 -
