@@ -2,14 +2,21 @@
   #include <stdio.h>
   #include <stdlib.h>
   #include <math.h> 
+  #include <string.h>
   #include <string>
   #include <iostream>
+
   extern FILE* yyin;
-  extern int yylex ();
-  int yyerror(char *s);
+  extern int yylex();
+  int yyerror(char* s);
+
+  extern struct yy_buffer_state yy_buffer_state_def;
+  typedef struct yy_buffer_state_def* YY_BUFFER_STATE;
+  #define yyconst const
+  extern YY_BUFFER_STATE yy_scan_string (yyconst char* yy_str);
   using namespace std;
 
-  string output = "-1"; // on initialise a la valeur d'erreur
+  string output = "-1"; // Variable globale correspondant à la sortie, on l'initialise avec le code ERREUR '-1'
 %}
 
 %code requires
@@ -40,15 +47,17 @@ int yyerror(char *s) {
 
 
 int main(int argc, char* argv[]) {
-    FILE* file;
-    if (argc == 2) {
-        file = fopen(argv[1], "r");
-        if (file != NULL)   yyin = file; // now flex reads from file
+
+    if(argc == 2) {
+        if(strstr(argv[1],".txt")) {
+            FILE* file;
+            file = fopen(argv[1], "r");
+            if (file != NULL)   yyin = file;// fclose(file) pas nécessaire à la fin car à la sortie du main le fichier sera fermé automatiquement.
+        }
+        else yy_scan_string(argv[1]);
     }
 
     yyparse();
 
-    if (argc == 2)  fclose(file);
-    if (file == yyin) return stoi(output); 
-    return -1;// val d'erreur : -1
+    return stoi(output);
 }
