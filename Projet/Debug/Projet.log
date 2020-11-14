@@ -1,0 +1,20 @@
+﻿La génération a démarré 14/11/2020 12:54:57.
+La verbosité de la journalisation a la valeur Normal.     1>Projet "D:\Cours\Projet Theorie\Projet-Theorie\Projet\Projet.vcxproj" sur le nœud 2 (Build cible(s)).
+     1>InitializeBuildStatus:
+         Création de "Debug\Projet.tlog\unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\bin\HostX86\x86\CL.exe /c /I"D:\Cours\Projet Theorie\Projet-Theorie\Projet\SFML\include" /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc142.pdb" /Gd /TP /analyze- /FC /errorReport:prompt Projet.cpp
+         Projet.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\bin\HostX86\x86\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Cours\Projet Theorie\Projet-Theorie\Debug\Projet.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\Cours\Projet Theorie\Projet-Theorie\Projet\SFML\lib" "sfml-graphics-d.lib" "sfml-window-d.lib" "sfml-audio-d.lib" "sfml-network-d.lib" "sfml-system-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"D:\Cours\Projet Theorie\Projet-Theorie\Debug\Projet.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Cours\Projet Theorie\Projet-Theorie\Debug\Projet.lib" /MACHINE:X86 Debug\Projet.obj
+         Projet.vcxproj -> D:\Cours\Projet Theorie\Projet-Theorie\Debug\Projet.exe
+       FinalizeBuildStatus:
+         Suppression du fichier "Debug\Projet.tlog\unsuccessfulbuild".
+         Mise à jour de l'horodatage "Debug\Projet.tlog\Projet.lastbuildstate".
+     1>Génération du projet "D:\Cours\Projet Theorie\Projet-Theorie\Projet\Projet.vcxproj" terminée (Build cible(s)).
+
+La génération a réussi.
+    0 Avertissement(s)
+    0 Erreur(s)
+
+Temps écoulé 00:00:01.17
