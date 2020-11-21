@@ -1,0 +1,86 @@
+﻿La génération a démarré 21/11/2020 23:24:50.
+La verbosité de la journalisation a la valeur Normal.     1>Projet "D:\Cours\Projet Theorie\Projet-Theorie-Local\Projet\Projet.vcxproj" sur le nœud 2 (Build cible(s)).
+     1>InitializeBuildStatus:
+         Mise à jour de l'horodatage "Debug\Projet.tlog\unsuccessfulbuild".
+       BisonTarget:
+         Process "defaut.y" bison file
+         cmd.exe /D /C "C:\Users\theo5\AppData\Local\Temp\tmpcbd41d7c021d424a829a716d620edbc5.cmd"
+         
+         start /B /WAIT /D "D:\Cours\Projet Theorie\Projet-Theorie-Local\Projet\Analyses\defaut\" win_bison.exe --output="defaut.tab.cpp" --defines="defaut.tab.h"  "defaut.y"
+         exit /b %errorlevel%
+     1>defaut.y : warning : 43 shift/reduce conflicts [-Wconflicts-sr]
+     1>defaut.y : warning : 60 reduce/reduce conflicts [-Wconflicts-rr]
+         defaut.y: note: rerun with option '-Wcounterexamples' to generate conflict counterexamples
+         defaut.y:93.8: warning: rule useless in parser due to conflicts [-Wother]
+            93 |       |      /*  ne pas oublier les lignes vides */
+               |        ^
+       BisonTarget:
+       La cible est ignorée "BisonTarget", car tous les fichiers de sortie sont à jour par rapport aux fichiers d'entrée.
+       FlexTarget:
+         Process "defaut.l" flex file
+         cmd.exe /D /C "C:\Users\theo5\AppData\Local\Temp\tmp49e1cddafd0743a5ba6921b184de8e40.cmd"
+         
+         start /B /WAIT /D "D:\Cours\Projet Theorie\Projet-Theorie-Local\Projet\Analyses\defaut\" win_flex.exe --outfile="defaut.flex.cpp" --wincompat  "defaut.l"
+         exit /b %errorlevel%
+       FlexTarget:
+       La cible est ignorée "FlexTarget", car tous les fichiers de sortie sont à jour par rapport aux fichiers d'entrée.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\bin\HostX86\x86\CL.exe /c /I"D:\Cours\Projet Theorie\Projet-Theorie-Local\Projet\SFML\include" /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc142.pdb" /Gd /TP /analyze- /FC /errorReport:prompt Analyses\defaut\defaut.flex.cpp Analyses\defaut\defaut.tab.cpp Projet.cpp
+         defaut.flex.cpp
+     1>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\stdint.h(49,1): warning C4005: 'INT8_MIN' : redéfinition de macro
+       D:\Cours\Projet Theorie\Projet-Theorie-Local\Projet\defaut.flex.cpp(318): message : voir la définition précédente de 'INT8_MIN'
+     1>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\stdint.h(50,1): warning C4005: 'INT16_MIN' : redéfinition de macro
+       D:\Cours\Projet Theorie\Projet-Theorie-Local\Projet\defaut.flex.cpp(321): message : voir la définition précédente de 'INT16_MIN'
+     1>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\stdint.h(51,1): warning C4005: 'INT32_MIN' : redéfinition de macro
+       D:\Cours\Projet Theorie\Projet-Theorie-Local\Projet\defaut.flex.cpp(324): message : voir la définition précédente de 'INT32_MIN'
+     1>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\stdint.h(53,1): warning C4005: 'INT8_MAX' : redéfinition de macro
+       D:\Cours\Projet Theorie\Projet-Theorie-Local\Projet\defaut.flex.cpp(327): message : voir la définition précédente de 'INT8_MAX'
+     1>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\stdint.h(54,1): warning C4005: 'INT16_MAX' : redéfinition de macro
+       D:\Cours\Projet Theorie\Projet-Theorie-Local\Projet\defaut.flex.cpp(330): message : voir la définition précédente de 'INT16_MAX'
+     1>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\stdint.h(55,1): warning C4005: 'INT32_MAX' : redéfinition de macro
+       D:\Cours\Projet Theorie\Projet-Theorie-Local\Projet\defaut.flex.cpp(333): message : voir la définition précédente de 'INT32_MAX'
+     1>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\stdint.h(57,1): warning C4005: 'UINT8_MAX' : redéfinition de macro
+       D:\Cours\Projet Theorie\Projet-Theorie-Local\Projet\defaut.flex.cpp(336): message : voir la définition précédente de 'UINT8_MAX'
+     1>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\stdint.h(58,1): warning C4005: 'UINT16_MAX' : redéfinition de macro
+       D:\Cours\Projet Theorie\Projet-Theorie-Local\Projet\defaut.flex.cpp(339): message : voir la définition précédente de 'UINT16_MAX'
+     1>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\stdint.h(59,1): warning C4005: 'UINT32_MAX' : redéfinition de macro
+       D:\Cours\Projet Theorie\Projet-Theorie-Local\Projet\defaut.flex.cpp(342): message : voir la définition précédente de 'UINT32_MAX'
+         defaut.tab.cpp
+         Projet.cpp
+         Génération de code en cours...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\bin\HostX86\x86\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Cours\Projet Theorie\Projet-Theorie-Local\Debug\Projet.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\Cours\Projet Theorie\Projet-Theorie-Local\Projet\SFML\lib" "sfml-graphics-d.lib" "sfml-window-d.lib" "sfml-audio-d.lib" "sfml-network-d.lib" "sfml-system-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"D:\Cours\Projet Theorie\Projet-Theorie-Local\Debug\Projet.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Cours\Projet Theorie\Projet-Theorie-Local\Debug\Projet.lib" /MACHINE:X86 Debug\defaut.flex.obj
+         Debug\defaut.tab.obj
+         Debug\test.flex.obj
+         Debug\test.tab.obj
+         Debug\Projet.obj
+         Projet.vcxproj -> D:\Cours\Projet Theorie\Projet-Theorie-Local\Debug\Projet.exe
+       FinalizeBuildStatus:
+         Suppression du fichier "Debug\Projet.tlog\unsuccessfulbuild".
+         Mise à jour de l'horodatage "Debug\Projet.tlog\Projet.lastbuildstate".
+     1>Génération du projet "D:\Cours\Projet Theorie\Projet-Theorie-Local\Projet\Projet.vcxproj" terminée (Build cible(s)).
+
+La génération a réussi.
+
+       "D:\Cours\Projet Theorie\Projet-Theorie-Local\Projet\Projet.vcxproj" (Build cible) (1) ->
+       (BisonTarget cible) -> 
+         defaut.y : warning : 43 shift/reduce conflicts [-Wconflicts-sr]
+         defaut.y : warning : 60 reduce/reduce conflicts [-Wconflicts-rr]
+
+
+       "D:\Cours\Projet Theorie\Projet-Theorie-Local\Projet\Projet.vcxproj" (Build cible) (1) ->
+       (ClCompile cible) -> 
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\stdint.h(49,1): warning C4005: 'INT8_MIN' : redéfinition de macro
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\stdint.h(50,1): warning C4005: 'INT16_MIN' : redéfinition de macro
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\stdint.h(51,1): warning C4005: 'INT32_MIN' : redéfinition de macro
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\stdint.h(53,1): warning C4005: 'INT8_MAX' : redéfinition de macro
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\stdint.h(54,1): warning C4005: 'INT16_MAX' : redéfinition de macro
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\stdint.h(55,1): warning C4005: 'INT32_MAX' : redéfinition de macro
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\stdint.h(57,1): warning C4005: 'UINT8_MAX' : redéfinition de macro
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\stdint.h(58,1): warning C4005: 'UINT16_MAX' : redéfinition de macro
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\stdint.h(59,1): warning C4005: 'UINT32_MAX' : redéfinition de macro
+
+    11 Avertissement(s)
+    0 Erreur(s)
+
+Temps écoulé 00:00:02.53
