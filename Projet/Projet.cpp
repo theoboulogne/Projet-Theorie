@@ -4,32 +4,44 @@
 #include <iostream>
 #include <stdlib.h>
 #include <cstdlib>
+#include "Analyses/test/test.tab.h"
+#include "Analyses/defaut/defaut.tab.h"
 using namespace std;
 
+#ifndef YY_TYPEDEF_YY_BUFFER_STATE
+#define YY_TYPEDEF_YY_BUFFER_STATE
+typedef struct yy_buffer_state* YY_BUFFER_STATE;
+#endif
 
-/**
- * \brief Fonction d'analyse utilisant Flex&Bison
- * \param INPUT Chaine de caractère comprenant soit le lien vers un fichier .txt à lire soit un texte à analyser directement
- * \return Renvoi le résultat de la lecture, si = -1 alors il y a une erreur
- */
+struct yy_buffer_state;
+extern YY_BUFFER_STATE test_scan_string(const char* yy_str);
+extern FILE* defautin;
 
-int analyse(string INPUT)
-{
-    ifstream file("analyse"); // Lecture des commandes de compilation, similaire au MakeFile
-    string strtmp; // On utilise 2 variables tampon pour executer la dernière ligne à part et ainsi rajouter les arguments
-    string str = "";
-    while (getline(file, strtmp))
-    {
-        if (str!="") system(str.c_str()); // On execute les différentes commandes 
-        str = strtmp;
-    }
-    return system((str + " " + INPUT).c_str()); // et on renvoi la valeur de sortie de l'analyse
+void analyseString(string INPUT) {
+    test_scan_string(INPUT.c_str());
+    testparse();
+}
+
+void analyseFile(string NOM) {
+    FILE* file;
+    fopen_s(&file, NOM.c_str(), "r");
+    if (file != NULL)   defautin = file;
+    defautparse();
 }
 
 int main()
 {
+        // * Analyse FlexBison Test :
 
-    cout << "Valeur : " << analyse("5+1;")  << endl;
+    //createanalyse("test");
+    //cout << "Valeur : " << analyse("5+1;", "test")  << endl;
+
+    analyseFile("test.txt");
+    analyseString("5+5;");
+
+    cout << "fin tesst" << endl;
+
+        // * SFML Test :
 
     sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
     sf::CircleShape shape(100.f);
