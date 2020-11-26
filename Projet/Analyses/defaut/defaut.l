@@ -1,4 +1,5 @@
 %{
+  #pragma warning (disable: 4005)
   #include <stdio.h>
   #include <stdlib.h>
   #include <iostream>
@@ -6,6 +7,7 @@
   #include <cstring>
   #include "defaut.tab.h"
   using namespace std;
+  bool endFile = false;
 %}
 
 %option prefix = "defaut"
@@ -26,48 +28,62 @@
 */
 
 %%
-
+    /* Block d'instruction */
 [Ff]aire[ ]*                { return DO; }
 fois                        { return TIME; }
-
-[Aa]vancer                  { return MOVE; }
-[Tt]ourner                  { return TURN; }
+[Ss]i[ ]*                   { return IF; }
+alors                       { return THEN; }
+sinon                       { return ELSE; }
+[Tt]ant[ ]que               { return WHILE; }
+    /* Instruction executable */
+[Aa]vancer                    { return MOVE; }
+[Tt]ourner                    { return TURN; }
 ([ ]à[ ]gauche)|(\(gauche\))  { defautlval.val = 4; return DIR; }
 ([ ]à[ ]droite)|(\(droite\))  { defautlval.val = 6; return DIR; }
-[Rr]etourner                { return TURNBACK; }
-
-[Pp]orter                   { defautlval.val = 1; return CARRY; } // booleen si on porte un objet
-[Pp]oser                    { defautlval.val = 0; return CARRY; }
-[Uu]tiliser                 { return USE; }
-[Aa]ttraper                 { defautlval.val = 1; return TAKE; } // booleen si on a un objet en main
-[Ll]acher                   { defautlval.val = 0; return TAKE; }
-[Pp]ousser                  { defautlval.val = 8; return PUSH; } // 8 avant, 2 arrière ( en fonction du pad numerique )
-[Tt]irer                    { defautlval.val = 2; return PUSH; }
-
-
-[0-9]+                      {    // s'il s'agit d'un nombre on le stocke dans le champ "valeur"
+[Rr]etourner                  { return TURNBACK; }
+[Pp]orter                     { defautlval.val = 1; return CARRY; } // booleen si on porte un objet
+[Pp]oser                      { defautlval.val = 0; return CARRY; }
+[Uu]tiliser                   { return USE; }
+[Aa]ttraper                   { defautlval.val = 1; return TAKE; } // booleen si on a un objet en main
+[Ll]acher                     { defautlval.val = 0; return TAKE; }
+[Pp]ousser                    { defautlval.val = 8; return PUSH; } // 8 avant, 2 arrière ( en fonction du pad numerique )
+[Tt]irer                      { defautlval.val = 2; return PUSH; }
+    /* Implémentation des nombres et des identificateurs */
+[0-9]+                        {    // s'il s'agit d'un nombre on le stocke dans le champ "valeur"
                                 defautlval.val = stoi(defauttext);
                                 return NUM;
-                            }
-[a-zA-Z_][a-zA-Z0-9_]*      {  	// s'il s'agit d'une variable, on stocke son nom dans le champ "nom"
+                              }
+[a-zA-Z_][a-zA-Z0-9_]*        {  	// s'il s'agit d'une variable, on stocke son nom dans le champ "nom"
                                 strcpy_s(defautlval.str, sizeof(defauttext), defauttext);
                                 return VAR; 
-                            }
-"+"                         {  return PLUS;  }  // la même chose que return '+'  
-"-"                         {  return MINUS; }
-"*"                         {  return MULT; }
-"/"                         {  return DIV; }
-\n                          { return ENDL; }
-\r                          {}
-"="                         { return EQ; }
-"<"                         { return INF; }
-">"                         { return SUP; }
-" et "                      { return AND; }
-" ou "                      { return OR; }
-\(                          { return OPEN; }
-\)                          { return CLOSE; }
-
-
-
+                              }
+    /* Opérateurs de calcul */
+"+"                           { return PLUS;  }  // la même chose que return '+'  
+"-"                           { return MINUS; }
+"*"                           { return MULT; }
+"/"                           { return DIV; }
+"%"                           { return RESTE; }
+    /* Opérateurs conditionnels */
+"!="                          { return NOTEQ; }
+"=="                          { return EQQ; }
+"="                           { return EQ; }
+"<="                          { return INFEQ; }
+"<"                           { return INF; }
+">="                          { return SUPEQ; }
+">"                           { return SUP; }
+" et "|"&"                    { return AND; }
+" ou "|"|"                    { return OR; }
+    /* Parenthèses */
+\(                            { return OPEN; }
+\)                            { return CLOSE; }
+    /* Passage de ligne et fin de fichier */
+\n                            { return ENDL; }
+\r                            {}
+<<EOF>>                       { if(endFile) return 0; // On renvoi ENDF une seule fois puis on arrete l'analyse Flex
+                                else {
+                                    endFile = true;
+                                    return ENDF; 
+                                }
+                              }
 %%
 

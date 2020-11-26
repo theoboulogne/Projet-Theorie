@@ -14,3 +14,13 @@ Projet/analyse.bison.hpp
 Projet/analyse.exe
 
 Debug/
+
+.vs/ProjetTheorie/v16/
+
+Projet/Analyses/defaut/defaut.flex.cpp
+
+Projet/Analyses/defaut/defaut.tab.cpp
+
+Projet/Analyses/defaut/defaut.tab.h
+
+Projet/Analyses/test/test.flex.cpp
