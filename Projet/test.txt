@@ -1,0 +1,5 @@
+a = 5 + 2
+b = 2-3
+c = 5
+d = a/c
+avancer

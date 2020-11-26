@@ -16,30 +16,60 @@
     <Filter Include="Fichiers générés">
       <UniqueIdentifier>{dd0bd361-7845-41d8-82bc-d4ab7f537d02}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27analyse">
+      <UniqueIdentifier>{828be47a-9a11-4afc-adf5-b3a326fa3832}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27analyse\defaut">
+      <UniqueIdentifier>{ba702a2b-074e-43c6-a2e1-1b32b3afb728}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27analyse\test">
+      <UniqueIdentifier>{b7f9d0f6-6ef1-4208-ae34-07545d9350b6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Projet.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="Analyses\defaut\defaut.flex.cpp">
+      <Filter>Fichiers d%27analyse\defaut</Filter>
+    </ClCompile>
+    <ClCompile Include="Analyses\defaut\defaut.tab.cpp">
+      <Filter>Fichiers d%27analyse\defaut</Filter>
+    </ClCompile>
+    <ClCompile Include="Analyses\test\test.flex.cpp">
+      <Filter>Fichiers d%27analyse\test</Filter>
+    </ClCompile>
+    <ClCompile Include="Analyses\test\test.tab.cpp">
+      <Filter>Fichiers d%27analyse\test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Flex Include="analyse.l">
-      <Filter>Fichiers sources</Filter>
+    <Flex Include="Analyses\defaut\defaut.l">
+      <Filter>Fichiers d%27analyse\defaut</Filter>
+    </Flex>
+    <Flex Include="Analyses\test\test.l">
+      <Filter>Fichiers d%27analyse\test</Filter>
     </Flex>
   </ItemGroup>
   <ItemGroup>
-    <Bison Include="analyse.y">
-      <Filter>Fichiers sources</Filter>
+    <Bison Include="Analyses\defaut\defaut.y">
+      <Filter>Fichiers d%27analyse\defaut</Filter>
+    </Bison>
+    <Bison Include="Analyses\test\test.y">
+      <Filter>Fichiers d%27analyse\test</Filter>
     </Bison>
   </ItemGroup>
   <ItemGroup>
-    <None Include="analyse">
-      <Filter>Fichiers sources</Filter>
-    </None>
+    <ClInclude Include="Analyses\defaut\defaut.tab.h">
+      <Filter>Fichiers d%27analyse\defaut</Filter>
+    </ClInclude>
+    <ClInclude Include="Analyses\test\test.tab.h">
+      <Filter>Fichiers d%27analyse\test</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="analyse.txt">
-      <Filter>Fichiers sources</Filter>
+    <Text Include="test.txt">
+      <Filter>Fichiers de ressources</Filter>
     </Text>
   </ItemGroup>
 </Project>

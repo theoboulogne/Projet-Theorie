@@ -1,5 +1,0 @@
-del analyse.exe analyse.lex.cpp analyse.bison.cpp analyse.bison.hpp
-flex -oanalyse.lex.cpp analyse.l
-bison -d analyse.y -oanalyse.bison.cpp
-g++ analyse.lex.cpp analyse.bison.cpp -oanalyse
-.\analyse
